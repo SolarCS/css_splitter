@@ -2,7 +2,10 @@ module CssSplitter
 
   class Splitter
 
-    MAX_SELECTORS_DEFAULT = 4095
+    #seems that IE9 ignores some rules anyway (IE8 works fine here)
+    #value reduced from 4095 to 3500 to have "safe buffer"
+    #/Mati
+    MAX_SELECTORS_DEFAULT = 3500
 
     # returns the specified split of the passed css_string
     def self.split_string(css_string, split = 1, max_selectors = MAX_SELECTORS_DEFAULT)
